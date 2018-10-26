@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>WALLET ETHEREUM</title>
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+  <style type="text/css">
+    #contact-list {
+      height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="color:blue;text-align: center;">SIMPLE COLLECT TOKEN</h1>
+
+
+    <div class="form-group">
+        <label>LOGIN PORT </label>
+        <input type="text" class="form-control" id="IP" value="http://localhost:8540">
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="button-connect">CONNECT</button>
+
+    <div class="form-group">
+      <label for="words">Words</label>
+      <input type="text" name="words" value="" id="words" placeholder="12 words" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" id="signin">Sign In</button>
+      <button class="btn btn-primary" id="signup">Sign Up</button>
+    </div>
+
+    <div class="form-group">
+      <label for="words">Main adddress</label>
+      <input type="text" name="words" value="" id="addr" class="form-control" disabled="disabled" required>
+      <br>
+      <form class="form-inline">
+        <div class="form-group mb-2">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Main Balance">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" name="words" value="" id="balance" class="form-control" disabled="disabled" required>
+        </div>
+      </form>
+    </div>
+    
+    <form>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Type of file</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="radio0" value="1">
+              <label class="form-check-label" for="gridRadios1">
+                12 words
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="radio1" value="2">
+              <label class="form-check-label" for="gridRadios2">
+                List of private key
+              </label>
+            </div>
+          </div>
+      </fieldset>
+    </form>
+
+
+
+    <form class="form-inline">
+        <div class="form-group mb-2">
+          <input type="text" readonly class="form-control-plaintext" value="The number of address">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" name="words" value="" id="address_num" class="form-control" required>
+        </div>
+    </form>
+    <br>
+    <button class="btn btn-bd-primary" id="btn-readfile">Select a file</button>
+    <button class="btn btn-primary" id="createNewAddresses">Random address</button>
+    <br><br>
+    <div id="contact-list">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Balance</th>
+          </tr>
+        </thead>
+
+        <tbody id="contact-table">
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+
+
+    <div>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label>Gas Price</label>
+          <input class="form-control" id="gasPrice">
+        </div>
+
+        <div class="form-group col-md-5">
+          <label>Gas Limit</label>
+          <input class="form-control" id="gasLimit">
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label>Input address</label>
+          <input class="form-control" id="inputBalance">
+        </div>
+        <button class="btn btn-primary btn-lg" id="get_balance">Get out coin</button>
+        <div class="form-group col-md-5">
+          <label>Balance of address you choose</label>
+          <input class="form-control" id="outputBalance" disabled="disabled">
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Coin to send all address (wei) </label>
+      <input type="text" name="words" value="" id="coin" class="form-control" required>
+      <br>
+
+      <label for="words">Address of contract to transfer coin</label>
+      <input type="text" name="words" value="" id="sendCoin" class="form-control" required>
+      <br>
+      <button class="btn btn-primary" id="transfer">Transfer</button>
+      <button class="btn btn-primary" id="collectCoin">Collect Coin</button>
+    </div>
+
+    <div class="from-group">
+
+      <label for="words">Address of contract to collect token</label>
+      <input type="text" name="words" value="" id="colToken" class="form-control" required>
+      <br>
+      <button class="btn btn-primary" id="collectToken">Collect Token</button>
+    </div>
+
+    <script src="./util.js"></script>
+    <script src="./view.js"></script>
+
+
+  </div>
+
+
+
+  
+</body>
+</html>
